@@ -1,0 +1,21 @@
+// Enable content editing for the entire page
+document.body.contentEditable = true;
+
+// Function to get the font family used on the page
+function getFontFamily() {
+    const computedStyle = window.getComputedStyle(document.body);
+    const fontFamily = computedStyle.fontFamily || "Default Font";
+    return fontFamily;
+}
+
+// Display the font on the page
+const fontDisplay = document.createElement('div');
+fontDisplay.innerText = `Font: ${getFontFamily()}`;
+fontDisplay.style.position = 'fixed';
+fontDisplay.style.bottom = '10px';
+fontDisplay.style.right = '10px';
+fontDisplay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+fontDisplay.style.color = 'white';
+fontDisplay.style.padding = '10px';
+fontDisplay.style.zIndex = '10000';
+document.body.appendChild(fontDisplay);
